@@ -1,0 +1,32 @@
+/** Add css rules here for your application. */
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+body, td, a, div, .p {
+    font-family: arial, sans-serif
+}
+.gwt-Tree .gwt-TreeItem {
+    padding: 1px 0px;
+    margin: 0px;
+    white-space: nowrap;
+    cursor: hand;
+    cursor: pointer;
+}
+.gwt-Tree .gwt-TreeItem-selected {
+    background: #ebeff9;
+}
+.gwt-TreeItem .gwt-RadioButton input,
+.gwt-TreeItem .gwt-CheckBox input {
+    margin-left: 0px;
+}
+.gwt-TextBox {
+    padding: 5px 4px;
+    border: 1px solid #ccc;
+    border-top: 1px solid #999;
+    font-size: small;
+    font-family: Arial Unicode MS, Arial, sans-serif;
+}

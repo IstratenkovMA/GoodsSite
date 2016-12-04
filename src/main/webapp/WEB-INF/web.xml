@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>CategoryService</servlet-name>
+        <servlet-class>com.GoodsSite.server.impl.CategoryServiceImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryService</servlet-name>
+        <url-pattern>/GoodsSite/CategoryService</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GoodsTypeService</servlet-name>
+        <servlet-class>com.GoodsSite.server.impl.GoodsTypeServiceImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GoodsTypeService</servlet-name>
+        <url-pattern>/GoodsSite/GoodsTypeService</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GoodsService</servlet-name>
+        <servlet-class>com.GoodsSite.server.impl.GoodsServiceImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GoodsService</servlet-name>
+        <url-pattern>/GoodsSite/GoodsService</url-pattern>
+    </servlet-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>GoodsSite.html</welcome-file>
+    </welcome-file-list>
+</web-app>
