@@ -23,6 +23,9 @@ body, td, a, div, .p {
 .gwt-TreeItem .gwt-CheckBox input {
     margin-left: 0px;
 }
+.gwt-Hyperlink {
+    cursor: pointer;
+}
 .gwt-TextBox {
     padding: 5px 4px;
     border: 1px solid #ccc;

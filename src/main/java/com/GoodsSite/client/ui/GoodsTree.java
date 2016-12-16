@@ -7,6 +7,11 @@ import com.GoodsSite.client.service.goodsTypeService.GoodsTypeService;
 import com.GoodsSite.view.CategoryView;
 import com.GoodsSite.view.GoodsTypeView;
 import com.GoodsSite.view.GoodsView;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.logical.shared.OpenEvent;
+import com.google.gwt.event.logical.shared.OpenHandler;
+import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.ui.Tree;
@@ -20,16 +25,18 @@ public class GoodsTree extends VerticalPanel{
         final Tree categoryTree = getTree();
 
         categoryTree.setAnimationEnabled(true);
-        categoryTree.ensureDebugId("cwTree-staticTree");
-        ScrollPanel staticTreeWrapper = new ScrollPanel(categoryTree);
-        staticTreeWrapper.ensureDebugId("cwTree-staticTree-Wrapper");
-        staticTreeWrapper.setSize("300px", "300px");
-
-        // Wrap the static tree in a DecoratorPanel
-        DecoratorPanel staticDecorator = new DecoratorPanel();
-        staticDecorator.setWidget(staticTreeWrapper);
-
+        categoryTree.setFocus(true);
         add(categoryTree);
+
+        Button addGoodsButton = new Button("Переход в редактирование базы");
+        addGoodsButton.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent clickEvent) {
+                History.newItem("AddElements");
+            }
+        });
+        add(addGoodsButton);
+
         return this;
     }
     private Tree getTree(){

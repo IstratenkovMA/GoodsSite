@@ -2,6 +2,7 @@ package com.GoodsSite.view;
 
 
 import java.io.Serializable;
+import java.util.List;
 
 public class GoodsView implements Serializable{
 
@@ -11,7 +12,15 @@ public class GoodsView implements Serializable{
 
     private GoodsTypeView goodsType;
 
+    private List<ParameterView> parameters;
+
     public GoodsView() {
+    }
+
+    public GoodsView(String goodsName, GoodsTypeView goodsType, List<ParameterView> parameters) {
+        this.goodsName = goodsName;
+        this.goodsType = goodsType;
+        this.parameters = parameters;
     }
 
     public GoodsView(Long goodsId) {
@@ -42,4 +51,11 @@ public class GoodsView implements Serializable{
         this.goodsType = goodsType;
     }
 
+    public List<ParameterView> getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(List<ParameterView> parameters) {
+        this.parameters = parameters;
+    }
 }

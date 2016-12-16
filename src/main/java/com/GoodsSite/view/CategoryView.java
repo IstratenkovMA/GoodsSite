@@ -23,6 +23,12 @@ public class CategoryView implements Serializable {
         this.categoryName = categoryName;
     }
 
+    public CategoryView(CategoryView categoryView){
+        categoryId = categoryView.getCategoryId();
+        categoryName = categoryView.getCategoryName();
+        setGoodsTypeSet(categoryView.getGoodsTypeSet());
+    }
+
     public Long getCategoryId() {
         return categoryId;
     }

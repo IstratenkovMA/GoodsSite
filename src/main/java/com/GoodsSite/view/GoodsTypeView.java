@@ -21,6 +21,11 @@ public class GoodsTypeView implements Serializable {
         this.goodsTypeId = goodsTypeId;
     }
 
+    public GoodsTypeView(String goodsTypeName, CategoryView category) {
+        this.goodsTypeName = goodsTypeName;
+        this.category = category;
+    }
+
     public Long getGoodsTypeId() {
         return goodsTypeId;
     }

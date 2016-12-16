@@ -7,6 +7,7 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
+
     <servlet>
         <servlet-name>CategoryService</servlet-name>
         <servlet-class>com.GoodsSite.server.impl.CategoryServiceImpl</servlet-class>
@@ -32,6 +33,24 @@
     <servlet-mapping>
         <servlet-name>GoodsService</servlet-name>
         <url-pattern>/GoodsSite/GoodsService</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ParameterService</servlet-name>
+        <servlet-class>com.GoodsSite.server.impl.ParameterServiceImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ParameterService</servlet-name>
+        <url-pattern>/GoodsSite/ParameterService</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ParameterValueService</servlet-name>
+        <servlet-class>com.GoodsSite.server.impl.ParameterValueServiceImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ParameterValueService</servlet-name>
+        <url-pattern>/GoodsSite/ParameterValueService</url-pattern>
     </servlet-mapping>
 
 

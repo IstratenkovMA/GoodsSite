@@ -1,7 +1,10 @@
 package com.GoodsSite.controller;
 
 
+import com.GoodsSite.model.entity.Category;
 import com.GoodsSite.model.entity.GoodsType;
+import com.GoodsSite.model.repository.CategoryRepository;
+import com.GoodsSite.view.CategoryView;
 import com.GoodsSite.view.GoodsTypeView;
 import com.GoodsSite.model.repository.GoodsTypeRepository;
 import org.dozer.Mapper;
@@ -36,8 +39,12 @@ public class GoodsTypeSpringDataService {
         return viewList;
     }
 
-    public GoodsTypeView addOrUpdate(GoodsType goodsType){
-        return mapEntity(repository.save(goodsType));
+    public GoodsTypeView addOrUpdate(GoodsTypeView goodsType){
+        CategoryView category = new CategorySpringDataService().
+                getByName(goodsType.getCategory().getCategoryName());
+        return mapEntity(repository.save(new GoodsType(goodsType.getGoodsTypeName(),
+                new Category(category.getCategoryId(), category.getCategoryName()))));
+
     }
 
     public void delete(long id){

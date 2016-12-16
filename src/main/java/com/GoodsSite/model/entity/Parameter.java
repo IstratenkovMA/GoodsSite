@@ -21,6 +21,11 @@ public class Parameter {
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "parameters")
     private Set<Goods> goods;
 
+    public Parameter(String parameterName, ParameterValue value) {
+        this.parameterName = parameterName;
+        this.value = value;
+    }
+
     public Long getParameterId() {
         return parameterId;
     }

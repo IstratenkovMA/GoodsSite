@@ -12,6 +12,7 @@ public interface GoodsTypeService extends RemoteService {
     List<GoodsTypeView> getAll();
     GoodsTypeView getByName(String name);
     List<GoodsTypeView> getAllByCategoryId(Long categoryId);
+    GoodsTypeView addOrUpdate(GoodsTypeView goodsType);
 
 
     public static class App {

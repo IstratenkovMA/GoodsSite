@@ -1,28 +1,27 @@
-package com.GoodsSite.model.entity;
+package com.GoodsSite.view;
 
-import javax.persistence.*;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.List;
 
-@Entity
-@Table(name = "parameter_value")
-public class ParameterValue {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "parameter_value_id")
+
+public class ParameterValueView implements Serializable {
+
     private Long parameterValueId;
 
-    @Column(name = "parameter_value_value")
     private String parameterValueValue;
 
+    private List<ParameterView> parameters;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "value")
-    private Set<Parameter> parameters;
-
-    public ParameterValue() {
+    public ParameterValueView() {
     }
 
-    public ParameterValue(String parameterValueValue) {
+    public ParameterValueView(String parameterValueValue) {
         this.parameterValueValue = parameterValueValue;
+    }
+
+    public ParameterValueView(String parameterValueValue, List<ParameterView> parameters) {
+        this.parameterValueValue = parameterValueValue;
+        this.parameters = parameters;
     }
 
     public Long getParameterValueId() {
@@ -41,11 +40,11 @@ public class ParameterValue {
         this.parameterValueValue = parameterValueValue;
     }
 
-    public Set<Parameter> getParameters() {
+    public List<ParameterView> getParameters() {
         return parameters;
     }
 
-    public void setParameters(Set<Parameter> parameters) {
+    public void setParameters(List<ParameterView> parameters) {
         this.parameters = parameters;
     }
 }

@@ -29,6 +29,12 @@ public class Goods {
     public Goods(){
     }
 
+    public Goods(String goodsName, GoodsType goodsType, List<Parameter> parameters) {
+        this.goodsName = goodsName;
+        this.goodsType = goodsType;
+        this.parameters = parameters;
+    }
+
     public Goods(String goodsName) {
         this.goodsName = goodsName;
     }

@@ -14,6 +14,11 @@ public class GoodsTypeServiceImpl extends AutowiringRemoteServiceServlet impleme
     @Autowired
     private transient GoodsTypeSpringDataService service;
 
+    @Override
+    public GoodsTypeView addOrUpdate(GoodsTypeView goodsType) {
+        return service.addOrUpdate(goodsType);
+    }
+
     public List<GoodsTypeView> getAll() {
         return service.getAll();
     }

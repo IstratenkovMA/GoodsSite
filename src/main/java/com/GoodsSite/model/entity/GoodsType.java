@@ -25,6 +25,11 @@ public class GoodsType {
     public GoodsType() {
     }
 
+    public GoodsType(String goodsTypeName, Category category) {
+        this.goodsTypeName = goodsTypeName;
+        this.category = category;
+    }
+
     public GoodsType(String goodsTypeName) {
         this.goodsTypeName = goodsTypeName;
     }

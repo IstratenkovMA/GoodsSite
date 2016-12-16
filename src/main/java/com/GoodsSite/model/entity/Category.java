@@ -25,6 +25,11 @@ public class Category {
         this.categoryName = categoryName;
     }
 
+    public Category(Long categoryId,String categoryName){
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
+    }
+
     public Long getCategoryId() {
         return categoryId;
     }
